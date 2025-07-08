@@ -178,7 +178,7 @@ class GPQADiamondBenchmark(BaseBenchmark):
 
     def load_questions(self) -> List[Dict[str, Any]]:
         """Load GPQADiamond questions from the dataset."""
-        local_csv_path = "evalchemy/eval/chat_benchmarks/GPQADiamond/data/gpqa_diamond.csv"  
+        local_csv_path = "eval/chat_benchmarks/GPQADiamond/data/gpqa_diamond.csv"
         dataset = load_dataset("csv", data_files=local_csv_path)
         questions = [row for row in dataset["train"]]
         
