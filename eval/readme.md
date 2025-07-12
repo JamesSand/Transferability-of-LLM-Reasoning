@@ -30,7 +30,6 @@ pip install vllm==0.8.5
 - MATH500
 - GPQADiamond
 - LiveCodeBench
-- IFEval
 
 **For lm-evaluation-harness:**
 - HeadQA
