@@ -77,21 +77,3 @@ for i in "${!MODELS[@]}"; do
     --output_path logs 2>&1 | tee "$log_file"
 
 done
-
-summary_file="logs/eval_summary_$(date +"%Y%m%d_%H%M%S").txt"
-echo "============" >> "$summary_file"
-echo "" >> "$summary_file"
-
-for i in "${!MODELS[@]}"; do
-  MODEL_PATH="${MODELS[$i]}"
-  MODEL_NAME=$(get_unique_model_name "$MODEL_PATH" "$i")
-
-  if [[ "$MODEL_PATH" == *"Qwen2.5-7B-Instruct"* ]] || \
-     [[ "$MODEL_PATH" == *"Qwen2.5-Math-7B-Instruct"* ]] || \
-     [[ "$MODEL_PATH" == *"Qwen-2.5-Math-7B-SimpleRL-Zoo"* ]]; then
-    max_output_length=4096
-  else
-    max_output_length=$default_max_output_length
-  fi
-  
-done
