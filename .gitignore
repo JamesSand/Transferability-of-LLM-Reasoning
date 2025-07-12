@@ -1,5 +1,5 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
+**/__pycache__/
 *.py[cod]
 *.pyc
 *$py.class
@@ -150,7 +150,7 @@ datasets/
 # Cache directories
 cache/
 .cache/
-__pycache__/
+**/__pycache__/
 .pytest_cache/
 
 # IDE and editor files
