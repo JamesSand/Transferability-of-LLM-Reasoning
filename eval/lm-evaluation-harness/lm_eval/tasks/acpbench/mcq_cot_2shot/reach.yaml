@@ -4,8 +4,8 @@ include: _mcq_cot_2shot_yaml
 dataset_path: json
 dataset_kwargs:
   data_files: 
-    validation: lm-evaluation-harness/lm_eval/tasks/acpbench/mcq_cot_2shot/reach.json
-    test: lm-evaluation-harness/lm_eval/tasks/acpbench/mcq_cot_2shot/reach.json
+    validation: lm_eval/tasks/acpbench/mcq_cot_2shot/reach.json
+    test: lm_eval/tasks/acpbench/mcq_cot_2shot/reach.json
 
 fewshot_config:
   sampler: first_n

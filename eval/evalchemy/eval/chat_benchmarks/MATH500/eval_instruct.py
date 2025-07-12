@@ -11,8 +11,13 @@ from eval.task import BaseBenchmark
 
 # Modified version of hendrycks_math with additional instruction to mark the solution with \\boxed
 # https://github.com/mlfoundations/evalchemy/blob/e70a45e41cb2ada273d6bb98e75dba303ec31f8b/eval/chat_benchmarks/AMC23/eval_instruct.py#L15
-PROMPT = """Problem: {problem}\nMark your solution with \\boxed\nAnswer:"""
+# PROMPT = """Problem: {problem}\n\nPut your final answer with a \\boxed command.\n\nAnswer:"""
 
+PROMPT = """
+{problem}
+
+Please reason step by step, and put your final answer within \\boxed.
+"""
 
 class MATH500Benchmark(BaseBenchmark):
     """
@@ -81,9 +86,11 @@ class MATH500Benchmark(BaseBenchmark):
                     (
                         templated_messages,
                         {
-                            "do_sample": False,
+                            "do_sample": True,
                             "max_new_tokens": self.max_new_tokens,
                             "temperature": 0.7,
+                            "top_p": 0.8,
+                            "top_k": 20,
                             "seed": self.seed,
                         },
                     ),
@@ -123,6 +130,8 @@ class MATH500Benchmark(BaseBenchmark):
                 "accuracy": solved / total,
             }
         )
+        
+        print(f"MATH500: accuracy={results['accuracy']:.2f}")
 
         return results
 

@@ -4,7 +4,7 @@ output_type: generate_until
 # dataset_path: ibm/acp_bench
 dataset_path: json
 dataset_kwargs:
-  data_dir: /lm-evaluation-harness/lm_eval/tasks/acpbench/mcq_cot_2shot
+  data_dir: lm_eval/tasks/acpbench/mcq_cot_2shot
  
 test_split: validation
 num_fewshot: 2

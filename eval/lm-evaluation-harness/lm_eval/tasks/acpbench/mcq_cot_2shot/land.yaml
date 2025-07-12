@@ -4,8 +4,8 @@ include: _mcq_cot_2shot_yaml
 dataset_path: json
 dataset_kwargs:
   data_files: 
-    validation: lm-evaluation-harness/lm_eval/tasks/acpbench/mcq_cot_2shot/land.json
-    test: lm-evaluation-harness/lm_eval/tasks/acpbench/mcq_cot_2shot/land.json
+    validation: lm_eval/tasks/acpbench/mcq_cot_2shot/land.json
+    test: lm_eval/tasks/acpbench/mcq_cot_2shot/land.json
 
 fewshot_config:
   sampler: first_n
