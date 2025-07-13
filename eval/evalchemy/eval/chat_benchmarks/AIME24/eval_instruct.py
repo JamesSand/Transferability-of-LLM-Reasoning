@@ -50,7 +50,7 @@ class AIME24Benchmark(BaseBenchmark):
         self.debug = debug
         self.max_new_tokens = 32768  # set higher to avoid truncation for reasoning models
         self.seed = seed
-        self.n_repeat = 3
+        self.n_repeat = 10
 
     def generate_responses(self, model: LM) -> Dict[str, Any]:
         """
@@ -84,7 +84,7 @@ class AIME24Benchmark(BaseBenchmark):
                     (
                         templated_messages,
                         {
-                            "do_sample": False,
+                            "do_sample": True,
                             "max_new_tokens": self.max_new_tokens,
                             "temperature": 0.7,
                             "top_p": 0.8,
