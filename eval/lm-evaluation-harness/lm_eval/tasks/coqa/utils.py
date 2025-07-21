@@ -77,7 +77,7 @@ def process_results(doc, results):
     
     # Reasoning models modification: Remove the thinking part if present
     if "</think>" in pred:
-        pred = re.sub(r".*?</think>(\n)*", "", pred, flags=re.DOTALL).strip()
+        pred = re.sub(r"^.*?</think>", "", pred, flags=re.DOTALL).lstrip()
     
     pred = pred.split("\n")[0]
 

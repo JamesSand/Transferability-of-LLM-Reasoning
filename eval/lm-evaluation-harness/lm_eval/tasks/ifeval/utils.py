@@ -118,7 +118,9 @@ def process_results(doc, results):
     )
     response = results[0]
     # Reasoning models modification : Remove the thinking part
-    response = re.sub(r".*?<\/think>(\\n)*", "", response, flags=re.DOTALL).strip()
+    # response = re.sub(r".*?<\/think>(\\n)*", "", response, flags=re.DOTALL).strip()
+    response = re.sub(r"<think>.*?</think>\s*", "", response, flags=re.DOTALL).strip()
+    response = re.sub(r"^.*?</think>", "", response, flags=re.DOTALL).lstrip()
 
     out_strict = test_instruction_following_strict(inp, response)
     out_loose = test_instruction_following_loose(inp, response)
