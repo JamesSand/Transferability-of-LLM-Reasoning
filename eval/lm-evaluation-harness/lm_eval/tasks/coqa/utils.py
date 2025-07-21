@@ -5,16 +5,17 @@ import transformers.data.metrics.squad_metrics as squad_metrics
 
 
 def doc_to_text(doc):
-    # Given a passage p, the conversation history {q1, a1, . . . qi−1, ai−1}
-    # and a question qi, the task is to predict the answer ai
-    doc_text = doc["story"] + "\n\n"
+    doc_text = "Answer each question with a short, concise response. Output only all the answers. No other text.\n\n"
+    doc_text += doc["story"] + "\n\n"
+    
     for q, a in zip_longest(
         doc["questions"]["input_text"], doc["answers"]["input_text"][:-1]
-    ):  # omit target answer ai
+    ):
         question = f"Q: {q}\n\n"
         answer = f"A: {a}\n\n" if a is not None else "A:"
         doc_text += question + answer
     return doc_text
+
 
 
 def doc_to_target(doc):
