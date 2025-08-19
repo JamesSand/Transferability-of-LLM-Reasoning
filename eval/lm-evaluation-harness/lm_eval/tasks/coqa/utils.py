@@ -74,10 +74,14 @@ def compute_scores(gold_list, pred):
 def process_results(doc, results):
     gold_list = doc_to_target(doc)
     pred = results[0].strip()
-    
+
     # Reasoning models modification: Remove the thinking part if present
     if "</think>" in pred:
         pred = re.sub(r"^.*?</think>", "", pred, flags=re.DOTALL).lstrip()
+    # if "</think>" in pred:
+    #     parts = pred.split("</think>", 1)
+    #     if len(parts) > 1:
+    #         pred = parts[1].strip()
     
     pred = pred.split("\n")[0]
 

@@ -6,7 +6,7 @@
 
 **TL;DR**: We find that while supervised fine-tuning (SFT) on math data improves math reasoning but hurts general capabilities, reinforcement learning (RL) achieves strong math performance while preserving—and even improving—broader domain performance.
 
-**We will release our code very soon! Stay tuned!**
+**Our Code is Released!**
 
 ## 🔍 Overview
 
