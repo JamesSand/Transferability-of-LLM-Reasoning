@@ -52,11 +52,14 @@ This repository contains the code, data, and evaluation framework for our compre
 If you find this work useful, please cite our paper:
 
 ```bibtex
-@article{huan2025math,
-  title={Does Math Reasoning Improve General LLM Capabilities? Understanding Transferability of LLM Reasoning},
-  author={Huan, Maggie and Li, Yuetai and Zheng, Tuney and Xu, Xiaoyu and Kim, Seungone and Du, Minxin and Poovendran, Radha and Neubig, Graham and Yue, Xiang},
-  journal={arXiv preprint arXiv:2507.00432},
-  year={2025}
+@misc{huan2025doesmathreasoningimprove,
+      title={Does Math Reasoning Improve General LLM Capabilities? Understanding Transferability of LLM Reasoning}, 
+      author={Maggie Huan and Yuetai Li and Tuney Zheng and Xiaoyu Xu and Seungone Kim and Minxin Du and Radha Poovendran and Graham Neubig and Xiang Yue},
+      year={2025},
+      eprint={2507.00432},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2507.00432}, 
 }
 ```
 
