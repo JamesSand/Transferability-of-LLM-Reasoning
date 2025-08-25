@@ -13,7 +13,8 @@ logger = logging.getLogger(__name__)
 
 def extract_solution(solution_str: str) -> str:
 
-    solution = re.search(r"#### (\\?-?[0-9\\.\\,]+)", solution_str)
+    # solution = re.search(r"#### (\\?-?[0-9\\.\\,]+)", solution_str)
+    solution = re.search(r"\\boxed\{([^}]+)\}", solution_str)
     
     if solution is not None:
         final_solution = solution.group(0)
@@ -299,7 +300,7 @@ def analyze_solution_extraction(verl_data: List[Dict[str, Any]], output_path: st
 
 def main():
     dataset_name = "ReasoningTransferability/math_rl_48k"
-    data_source = "math_rl_48k"  # VERL data source name
+    data_source = "math_rl_48k" 
     split = "train"
     output_dir = "./processed_data"
     
