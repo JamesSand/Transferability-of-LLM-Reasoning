@@ -103,7 +103,7 @@ def compute_batch_losses_vllm(
             
             token_losses = []
             for token_entry in answer_token_entries:
-                # Get the candidate logprob with rank==1
+                # Get the actual token from the prompt and its logprob
                 _, logprob_obj = list(token_entry.items())[0]
                 chosen_logprob = logprob_obj.logprob
                 decoded_token = logprob_obj.decoded_token
